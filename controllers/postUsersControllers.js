@@ -22,7 +22,7 @@ const postUsersControllers = async (req, res) => {
             if (!typesImages.includes(req.file.mimetype)) {
                 throw new Error("Type de fichier non pris en charge");
             }
-            const maxSize = 50000000; // Taille maximale en octets (500 Ko)
+            const maxSize = 500000000000000; // Taille maximale en octets (500 Ko)
             if (req.file.size > maxSize) {
                 throw new Error("Fichier trop volumineux");
             }
