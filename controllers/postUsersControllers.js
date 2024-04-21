@@ -39,7 +39,7 @@ const postUsersControllers = async (req, res) => {
             writeStream.end();
 
             // Chemin de l'image pour la base de données
-            const imageUrl = `http://localhost:3001/uploads/postImage/${fileName}`; 
+            const imageUrl = `https://changes-social.onrender.com/uploads/postImage/${fileName}`; 
             const updateResult = await db.collection("postUsers").updateOne(
                 { _id: new ObjectId(postId) },
                 { $set: { picture: imageUrl } }
