@@ -11,9 +11,10 @@ const cookieParser = require("cookie-parser");
 const authMidleware = require("./midleware/authMidleware");
 // Configuration de CORS
 const corsOptions = {
-  origin: "*", // Autoriser les requêtes provenant de cette URL
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE", // Ajouter la méthode PATCH
-  credentials: true, // Autoriser les cookies
+  origin: ": https://tchouta-social.onrender.com", // Autoriser les requêtes provenant de cette URL
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE", 
+  credentials: true,
+  allowedHeaders: ["Origin", "X-Requested-With", "Content-Type", "Accept", "Authorization", "Custom-Header"] // Autoriser les cookies
 };
 
 app.use(cors(corsOptions)); // Utiliser les options de CORS
@@ -25,12 +26,12 @@ app.use(cookieParser());
  app.get("/jwt",authMidleware,(req,res)=>{
     res.status(200).send(res.locals.user)
  })
- app.use((req, res, next) => {
+ /*app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*'); // Autoriser l'accès depuis n'importe quelle origine
   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS'); // Autoriser les méthodes nécessaires
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization'); // Autoriser les en-têtes nécessaires
   next();
-});
+});*/
  // Autoriser l'accès public aux fichiers statiques dans le dossier uploads/profil
 app.use('/uploads/profil', express.static(path.join(__dirname, "client/public/uploads/profil")));
 app.use('/uploads/postImage', express.static(path.join(__dirname, "client/public/uploads/postImage")));

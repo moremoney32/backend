@@ -15,6 +15,7 @@ const commentUser = async(req,res)=>{
         uniqueCommentId: newCommentId, // Ajoute un nouvel identifiant unique pour le commentaire
         commenterPseudo: req.body.commenterPseudo,
         commentText: req.body.commentText,
+        photoprofilcomment:req.body.photoprofilcomment,
         time: new Date().getTime(),
       };
     try {

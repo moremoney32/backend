@@ -1,4 +1,4 @@
-/***function qui verifie  juste une seule si l utilisateur a le token si oui il peut se connecter car son id est reconnu */
+/***function qui verifie  juste  si l utilisateur a le token si oui il peut se connecter car son id est reconnu */
 const jwt = require("jsonwebtoken");
 require("dotenv").config({ path: "../config/.env" });
 const authMidleware = (req,res,next)=>{
