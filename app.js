@@ -24,12 +24,12 @@ app.use(bodyParser.json());
 app.use(express.json());
 app.use(cookieParser()); 
 
- //app.use((req, res, next) => {
- // res.header('Access-Control-Allow-Origin', '*'); // Autoriser l'accès depuis n'importe quelle origine
-  //res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS'); // Autoriser les méthodes nécessaires
-  //res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization'); // Autoriser les en-têtes nécessaires
-  //next();
-//});
+ app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*'); // Autoriser l'accès depuis n'importe quelle origine
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS'); // Autoriser les méthodes nécessaires
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization'); // Autoriser les en-têtes nécessaires
+  next();
+});
  // Autoriser l'accès public aux fichiers statiques dans le dossier uploads/profil
 app.use('/uploads/profil', express.static(path.join(__dirname, "client/public/uploads/profil")));
 app.use('/uploads/postImage', express.static(path.join(__dirname, "client/public/uploads/postImage")));
