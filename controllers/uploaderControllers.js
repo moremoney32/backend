@@ -40,6 +40,7 @@ const uploaderControllers = async (req, res) => {
         writeStream.end();
 
         //  chemin de l'image dans la base de données
+        //https://changes-social.onrender.com
         const imageUrl = `https://changes-social.onrender.com/uploads/profil/${fileName}`; 
         const updateResult = await db.collection(process.env.dbName).updateOne(
             { _id: new ObjectId(userId) },
