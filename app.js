@@ -11,7 +11,7 @@ const cookieParser = require("cookie-parser");
 const authMidleware = require("./midleware/authMidleware");
 // Configuration de CORS
 const corsOptions = {
-  origin: "https://tchouta-social.onrender.com/", // Autoriser les requêtes provenant de cette URL
+  origin: "*", // Autoriser les requêtes provenant de cette URL
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE", 
   credentials: true,
   allowedHeaders: ["Origin", "X-Requested-With", "Content-Type", "Accept", "Authorization", "Custom-Header"] // Autoriser les cookies
