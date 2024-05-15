@@ -15,7 +15,7 @@ const loginController = async(req,res)=>{
             res.cookie("jwt", token, {
                 httpOnly: false,
                 maxAge: 8888888, // Durée de vie du cookie en millisecondes
-                domain: "https://tchouta-social.onrender.com/", // Remplacer par votre domaine réel
+                domain: "https://changes-social.onrender.com/", // Remplacer par votre domaine réel
                 path: "/", // Accessible sur toutes les routes
               });
            // res.cookie("jwt",token,{httpOnly:true,maxAge:8888888 })//le nombre de jour d expiration doit etre pareil aue les cookies et token
