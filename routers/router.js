@@ -42,6 +42,6 @@ router.get("/allpost",allPostUsersControllers)
 router.get("/infoinfocontrollers/:id",infoinfoControllers)//une autre maniere de recuperer avec le get les elements d un utilisateur 
 router.post("/postuser",upload,postUsersControllers)
 router.post("/upload",upload,uploaderControllers)
-router.get("/get",authMidleware)
+router.get("/jwt",authMidleware)
 
 module.exports = router
