@@ -35,7 +35,7 @@ app.use('/uploads/profil', express.static(path.join(__dirname, "client/public/up
 app.use('/uploads/postImage', express.static(path.join(__dirname, "client/public/uploads/postImage")));
 //manumanu mon token cette route intercepte tous les get d un userId e verifie si il a son token valide
 //app.get("*",checkUser);
- app.get("/jwt",cors(corsOptions),authMidleware,(req,res)=>{
+ app.get("/jwt",authMidleware,(req,res)=>{
   try {//console.log(res.locals)
     //console.log(res.locals.user)
     //console.log(res.locals.userId)
