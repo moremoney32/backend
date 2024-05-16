@@ -8,7 +8,7 @@ const router = require("./routers/router");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
-//const authMidleware = require("./midleware/authMidleware");
+const authMidleware = require("./midleware/authMidleware");
 // Configuration de CORS
 const corsOptions = {
   origin: "https://tchouta-social.onrender.com", // Autoriser les requêtes provenant de cette URL

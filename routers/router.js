@@ -19,7 +19,7 @@ const dislikesPostUsers = require("../controllers/dislikesPostUsers");
 const commentUser = require("../controllers/commentUser");
 const editComment = require("../controllers/editComment");
 const uploaderControllers = require("../controllers/uploaderControllers");
-const allPostUsersControllers = require("../controllers/allPostUsersControllers");
+//const allPostUsersControllers = require("../controllers/allPostUsersControllers");
 const authMidleware = require("../midleware/authMidleware");
 //const upload = require("../controllers/uploaderControllers");
 const router = express.Router();
@@ -42,6 +42,6 @@ router.get("/allpost",allPostUsersControllers)
 router.get("/infoinfocontrollers/:id",infoinfoControllers)//une autre maniere de recuperer avec le get les elements d un utilisateur 
 router.post("/postuser",upload,postUsersControllers)
 router.post("/upload",upload,uploaderControllers)
-router.get("/jwt",authMidleware)
+//router.get("/jwt",authMidleware)
 
 module.exports = router
