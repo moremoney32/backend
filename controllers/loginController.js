@@ -13,11 +13,11 @@ const loginController = async(req,res)=>{
         if(result.message === 'connexion reussi'){
             const token = jwt.sign({ userId: id }, process.env.secretKey,  {expiresIn:process.env.expiresInn} );
             res.cookie("jwt", token, {
-                httpOnly: false,
+                httpOnly:true,
                 maxAge: 8888888, // Durée de vie du cookie en millisecondes
                 domain: "tchouta-social.onrender.com", // Remplacer par votre domaine réel
-                path: "/", 
-                secure: true// Accessible sur toutes les routes
+                path: "/",// Accessible sur toutes les routes 
+                secure:true
               });
            // res.cookie("jwt",token,{httpOnly:true,maxAge:8888888 })//le nombre de jour d expiration doit etre pareil aue les cookies et token
             res.status(200).json({message:'connexion reussi'})
