@@ -37,8 +37,8 @@ app.use('/uploads/postImage', express.static(path.join(__dirname, "client/public
 //app.get("*",checkUser);
  app.get("/jwt",cors(corsOptions),authMidleware,(req,res)=>{
   try {
-   // console.log(res.locals.user)
-    res.status(200).send(res.locals.user)
+    console.log(res.locals.user)
+    res.status(200).send(res.locals)
     
   } catch (error) {
     res.status(200).send({message:"iiiziiii"})
