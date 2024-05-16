@@ -10,6 +10,7 @@ const authMidleware = (req,res,next)=>{
                 console.log(err)
             }else{
                 console.log(decodedToken.userId)
+                res.locals.userId = decodedToken.userId;
                 next()
             }
         })

@@ -36,10 +36,9 @@ app.use('/uploads/postImage', express.static(path.join(__dirname, "client/public
 //manumanu mon token cette route intercepte tous les get d un userId e verifie si il a son token valide
 //app.get("*",checkUser);
  app.get("/jwt",authMidleware,(req,res)=>{
-  try {//console.log(res.locals)
-    //console.log(res.locals.user)
-    //console.log(res.locals.userId)
-    res.status(200).send(res.locals.userId)
+  try {
+    //es.status(200).send(res.locals.userId)
+    res.status(200).send({ userId: res.locals.userId })
     
   } catch (error) {
     res.status(200).send({message:"iiiziiii"})
