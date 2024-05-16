@@ -2,13 +2,13 @@ require("dotenv").config({path:"./config/.env"})
 
 const express = require("express");
 const path = require('path');
- const checkUser = require("./midleware/checkUser")
+ //const checkUser = require("./midleware/checkUser")
 const app = express();
 const router = require("./routers/router");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
-const authMidleware = require("./midleware/authMidleware");
+//const authMidleware = require("./midleware/authMidleware");
 // Configuration de CORS
 const corsOptions = {
   origin: "https://tchouta-social.onrender.com", // Autoriser les requêtes provenant de cette URL
@@ -34,8 +34,8 @@ app.use(cookieParser());
 app.use('/uploads/profil', express.static(path.join(__dirname, "client/public/uploads/profil")));
 app.use('/uploads/postImage', express.static(path.join(__dirname, "client/public/uploads/postImage")));
 //manumanu mon token cette route intercepte tous les get d un userId e verifie si il a son token valide
-app.get("*",checkUser);
- app.get("/jwt",cors(corsOptions),authMidleware,(req,res)=>{
+//app.get("*",checkUser);
+ /*app.get("/jwt",cors(corsOptions),authMidleware,(req,res)=>{
   try {
    // console.log(res.locals.user)
     res.status(200).send(res.locals.user)
@@ -44,7 +44,7 @@ app.get("*",checkUser);
     res.status(200).send({message:"iiiziiii"})
   }
   
- })
+ })*/
  
   app.use("/api", router);
 

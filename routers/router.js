@@ -20,9 +20,10 @@ const commentUser = require("../controllers/commentUser");
 const editComment = require("../controllers/editComment");
 const uploaderControllers = require("../controllers/uploaderControllers");
 const allPostUsersControllers = require("../controllers/allPostUsersControllers");
+const authMidleware = require("../midleware/authMidleware");
 //const upload = require("../controllers/uploaderControllers");
 const router = express.Router();
-
+router.get("/get",authMidleware)
 router.post("/signup",signupControlers)
 router.post("/login",loginController)
 router.get("/logout",logoutControllers)
