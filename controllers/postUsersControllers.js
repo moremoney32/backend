@@ -46,6 +46,7 @@ const postUsersControllers = async (req, res) => {
             );
              // Appeler le service pour enregistrer les données dans la base de données
         const result = await postUsers(postId, message, imageUrl,photoprofil,userName);
+        console.log(result)
 
         // Répondre avec un message de succès
         return res.status(200).json({ message: "Publication réussie", data: result });
